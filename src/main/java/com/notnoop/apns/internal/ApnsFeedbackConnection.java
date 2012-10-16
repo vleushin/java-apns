@@ -41,13 +41,13 @@ import java.util.Map;
 import javax.net.SocketFactory;
 import javax.net.ssl.SSLSocketFactory;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import com.notnoop.exceptions.NetworkIOException;
 
 public class ApnsFeedbackConnection {
-    private static final Logger logger = LoggerFactory.getLogger(ApnsFeedbackConnection.class);
+    private static final Log logger = LogFactory.getLog(ApnsFeedbackConnection.class);
 
     private final SocketFactory factory;
     private final String host;

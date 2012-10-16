@@ -5,14 +5,13 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-import org.slf4j.LoggerFactory;
-import org.slf4j.Logger;
-
 import com.notnoop.apns.ApnsNotification;
 import com.notnoop.exceptions.NetworkIOException;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class ApnsPooledConnection implements ApnsConnection {
-    private static final Logger logger = LoggerFactory.getLogger(ApnsPooledConnection.class);
+    private static final Log logger = LogFactory.getLog(ApnsPooledConnection.class);
 
     private final ApnsConnection prototype;
     private final int max;

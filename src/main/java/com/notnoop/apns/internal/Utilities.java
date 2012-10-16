@@ -43,6 +43,7 @@ import java.security.KeyStore;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
 import javax.net.ssl.KeyManagerFactory;
@@ -50,14 +51,13 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManagerFactory;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.notnoop.exceptions.InvalidSSLConfig;
 import com.notnoop.exceptions.NetworkIOException;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class Utilities {
-    private static Logger logger = LoggerFactory.getLogger(Utilities.class);
+    private static Log logger = LogFactory.getLog(Utilities.class);
 
     public static final String SANDBOX_GATEWAY_HOST = "gateway.sandbox.push.apple.com";
     public static final int SANDBOX_GATEWAY_PORT = 2195;

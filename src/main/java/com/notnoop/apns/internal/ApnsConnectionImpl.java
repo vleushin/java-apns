@@ -39,8 +39,8 @@ import java.net.Socket;
 import javax.net.SocketFactory;
 import javax.net.ssl.SSLSocketFactory;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import com.notnoop.apns.ApnsDelegate;
 import com.notnoop.apns.ApnsNotification;
@@ -50,7 +50,7 @@ import com.notnoop.apns.SimpleApnsNotification;
 import com.notnoop.exceptions.NetworkIOException;
 
 public class ApnsConnectionImpl implements ApnsConnection {
-    private static final Logger logger = LoggerFactory.getLogger(ApnsConnectionImpl.class);
+    private static final Log logger = LogFactory.getLog(ApnsConnectionImpl.class);
 
     private final SocketFactory factory;
     private final String host;
@@ -172,7 +172,7 @@ public class ApnsConnectionImpl implements ApnsConnection {
                 socket.getOutputStream().flush();
                 delegate.messageSent(m);
 
-                logger.debug("Message \"{}\" sent", m);
+                logger.debug("Message \"{" + m + "}\" sent");
 
                 attempts = 0;
                 break;
