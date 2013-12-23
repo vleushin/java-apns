@@ -161,7 +161,7 @@ public class ApnsConnectionImpl implements ApnsConnection {
 
     int DELAY_IN_MS = 1000;
 
-    private static final int RETRIES = 3;
+    private static final int RETRIES = 2;
     public synchronized void sendMessage(ApnsNotification m) throws NetworkIOException {
         int attempts = 0;
         while (true) {

@@ -38,7 +38,10 @@ public class ApnsConnectionTest {
         packetSentRegardless(factory, baos);
     }
 
-    @Test
+    /**
+     * Connection fails after two retries
+     */
+    @Test(expected = Exception.class)
     public void errorTwice() {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         SocketFactory factory = mockClosedThenOpenSocket(baos, null, false, 2);
